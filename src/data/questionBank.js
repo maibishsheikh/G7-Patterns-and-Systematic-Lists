@@ -389,7 +389,36 @@ staticQuestionBank[10] = [
   },
 ];
 
-// ---------------------------------------------------------------------
+export const DISTRICTS = [
+  { id: 0, name: 'Spot the Next Term', icon: '🔢', boss: { name: 'Sequence Sprite', emoji: '👾', reward: 'Pattern Scout Badge 🔢' } },
+  { id: 1, name: 'Growing & Shrinking', icon: '📈', boss: { name: 'Delta Dragon', emoji: '🐉', reward: 'Delta Master Badge 📈' } },
+  { id: 2, name: 'The Rule Detective', icon: '🕵️', boss: { name: 'Rule Master', emoji: '🕵️', reward: 'Detective Crown 🕵️' } },
+  { id: 3, name: 'Position & nth Term', icon: '🎯', boss: { name: 'Formula Phantom', emoji: '👻', reward: 'Formula Wizard Badge 🎯' } },
+  { id: 4, name: 'Shape & Figures', icon: '🧱', boss: { name: 'Tile Titan', emoji: '🗿', reward: 'Geometry Guru Badge 🧱' } },
+  { id: 5, name: 'Listing with Tables', icon: '📋', boss: { name: 'Grid Guardian', emoji: '🛡️', reward: 'Table Tactician Badge 📋' } },
+  { id: 6, name: 'Tree Diagrams', icon: '🌳', boss: { name: 'Branching Baron', emoji: '🌲', reward: 'Tree Tracker Badge 🌳' } },
+  { id: 7, name: 'Multiplication Rule', icon: '✖️', boss: { name: 'Combinations King', emoji: '👑', reward: 'Multiplier Champ Badge ✖️' } },
+  { id: 8, name: 'Without Repeats', icon: '🔀', boss: { name: 'Permutation Prince', emoji: '🎩', reward: 'Permutation Pro Badge 🔀' } },
+  { id: 9, name: 'Grand Challenges', icon: '🏆', boss: { name: 'Grand Archon', emoji: '⚡', reward: 'Grand Master Trophy 🏆' } },
+];
+
+export const RAW_QUESTIONS = [];
+for (let w = 1; w <= 10; w++) {
+  if (staticQuestionBank[w]) {
+    staticQuestionBank[w].forEach((q) => {
+      RAW_QUESTIONS.push({
+        ...q,
+        districtId: w - 1,
+        questionText: q.prompt,
+        hint1: q.hint,
+        hint2: q.explanation,
+        category: DISTRICTS[w - 1]?.name || 'PATTERNS & LISTS',
+      });
+    });
+  }
+}
+
+export const questionBank = RAW_QUESTIONS;
 
 export function buildWorldSession(worldId, sessionSize = 10) {
   const worldQuestions = staticQuestionBank[worldId] || staticQuestionBank[1];
@@ -401,4 +430,5 @@ export function generateQuestionForWorld(worldId) {
   return worldQuestions[0];
 }
 
-export default staticQuestionBank;
+export default questionBank;
+
