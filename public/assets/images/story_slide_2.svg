@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#26163f"/>
+      <stop offset="100%" stop-color="#0F0B1E"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="50" cy="70" r="2"/><circle cx="760" cy="60" r="2"/><circle cx="100" cy="540" r="2"/><circle cx="720" cy="520" r="2"/>
+  </g>
+
+  <text x="400" y="55" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="900" font-size="32" fill="#FFB800">The Golden Rule of Listing</text>
+
+  <!-- Left: T-shirts x Shorts grid -->
+  <g transform="translate(90,110)">
+    <text x="130" y="0" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="18" fill="#06B6D4">3 Shirts × 2 Shorts</text>
+    <g font-size="30">
+      <text x="80" y="45">👕</text><text x="140" y="45">👕</text><text x="200" y="45">👕</text>
+    </g>
+    <g font-size="30">
+      <text x="10" y="100">🩳</text>
+      <text x="10" y="145">🩳</text>
+    </g>
+    <g stroke="#8B5CF6" stroke-width="2" fill="#8B5CF622">
+      <rect x="60" y="75" width="60" height="40" rx="8"/><rect x="130" y="75" width="60" height="40" rx="8"/><rect x="200" y="75" width="60" height="40" rx="8"/>
+      <rect x="60" y="120" width="60" height="40" rx="8"/><rect x="130" y="120" width="60" height="40" rx="8"/><rect x="200" y="120" width="60" height="40" rx="8"/>
+    </g>
+    <text x="130" y="210" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="22" fill="#10B981">3 × 2 = 6 outfits ✅</text>
+  </g>
+
+  <!-- Right: crossed out addition -->
+  <g transform="translate(470,110)">
+    <text x="130" y="0" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="18" fill="#EF4444">Never Add Them!</text>
+    <text x="130" y="110" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="46" fill="#EF4444" opacity="0.85">3 + 2 = 5</text>
+    <line x1="30" y1="95" x2="230" y2="130" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+    <text x="130" y="180" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="18" fill="#F3F4F6">That's a common mistake!</text>
+  </g>
+
+  <!-- Golden rule pill -->
+  <g transform="translate(120,380)">
+    <rect width="560" height="140" rx="30" fill="#161129" stroke="#FFB800" stroke-width="4"/>
+    <text x="280" y="55" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="22" fill="#FFB800">GOLDEN RULE</text>
+    <text x="280" y="95" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="20" fill="#F3F4F6">Total outcomes = choices at stage 1</text>
+    <text x="280" y="122" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="20" fill="#F3F4F6">× choices at stage 2 × ...</text>
+  </g>
+</svg>
