@@ -7,7 +7,6 @@ import BossBattleModal from '../quiz/BossBattleModal.jsx';
 import FeedbackOverlay from '../shared/FeedbackOverlay.jsx';
 import { useAudio } from '../../hooks/useAudio.js';
 import { DISTRICTS } from '../../data/questionBank.js';
-import { narrationScript } from '../../data/narration.js';
 import confetti from 'canvas-confetti';
 
 export default function PlayPhase({ state, dispatch }) {
@@ -132,7 +131,7 @@ export default function PlayPhase({ state, dispatch }) {
     advanceQuestion();
   }
 
-  function startDistrict(idx) {
+  function startDistrict() {
     setShowMap(false);
     setSelectedAnswer(null);
   }

@@ -9,13 +9,6 @@ export function useAudio(audioEnabled = true) {
   const playingRef      = useRef(false);
   const narrateIdRef    = useRef(0);
 
-  useEffect(() => {
-    if (!audioEnabled) {
-      narrateIdRef.current++;
-      stopAll();
-    }
-  }, [audioEnabled]);
-
   const stopAll = useCallback(() => {
     narrateIdRef.current++;
     if (currentAudioRef.current) {
@@ -25,6 +18,13 @@ export function useAudio(audioEnabled = true) {
     }
     playingRef.current = false;
   }, []);
+
+  useEffect(() => {
+    if (!audioEnabled) {
+      narrateIdRef.current++;
+      stopAll();
+    }
+  }, [audioEnabled, stopAll]);
 
   const getAudioUrl = useCallback((text) => {
     if (!text) return null;

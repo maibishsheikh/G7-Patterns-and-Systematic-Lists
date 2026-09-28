@@ -45,7 +45,6 @@ export default function QuestionRenderer({
         {options?.map((opt, i) => {
           const isSelected = selectedAnswer !== null && String(selectedAnswer).trim() === String(opt).trim();
           const isCorrectAnswer = isSelected && String(opt).trim() === String(correctAnswer).trim();
-          const isWrongAnswer = isSelected && !isCorrectAnswer;
 
           let btnClass = 'option-btn';
           if (isSelected) {

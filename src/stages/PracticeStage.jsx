@@ -14,7 +14,7 @@ export const PracticeStage = () => {
     session,
     answerQuestion,
     advanceQuestion,
-    useHint,
+    useHint: triggerHint,
     progress,
     setStage,
   } = useAppStore();
@@ -105,7 +105,7 @@ export const PracticeStage = () => {
 
   const handleUseHint = () => {
     soundEngine.stop();
-    useHint();
+    triggerHint();
     if (activeWorldId && currentQ) {
       const hintKey = `w${activeWorldId}_q${session.currentIndex + 1}_hint`;
       const hintText = narrationScript[hintKey] || currentQ.hint;

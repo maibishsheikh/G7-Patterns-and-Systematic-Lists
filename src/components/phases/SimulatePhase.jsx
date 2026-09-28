@@ -223,7 +223,6 @@ export default function SimulatePhase({ state, dispatch }) {
                   {currentDetective.options.map((opt) => {
                     const isSelected = detectiveUserAnswer === opt.toString();
                     const isCorrect = isSelected && opt === currentDetective.answer;
-                    const isWrong = isSelected && !isCorrect;
                     let cls = 'option-btn';
                     if (isSelected) cls += isCorrect ? ' correct' : ' wrong';
 
