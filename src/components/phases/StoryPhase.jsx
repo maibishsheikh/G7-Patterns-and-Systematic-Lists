@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './StoryPhase.css';
 import { storySlides } from '../../data/storySlides.js';
-import { narrationScript } from '../../data/narration.js';
+import { storyNarration } from '../../utils/narration.js';
 import { useAudio } from '../../hooks/useAudio.js';
 
 function StoryImage({ slide }) {
@@ -43,16 +43,14 @@ export default function StoryPhase({ state, dispatch }) {
 
   useEffect(() => {
     stopAll();
-    const audioKey = `story_slide_${panelIdx + 1}`;
-    const textToPlay = narrationScript[audioKey] || slide.narrative;
     const timer = setTimeout(() => {
-      narrate([{ text: textToPlay }]);
+      narrate(storyNarration(panelIdx));
     }, 300);
     return () => {
       clearTimeout(timer);
       stopAll();
     };
-  }, [panelIdx, narrate, stopAll, slide.narrative]);
+  }, [panelIdx, narrate, stopAll]);
 
   function handleNext() {
     stopAll();

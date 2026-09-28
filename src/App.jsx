@@ -216,16 +216,6 @@ export default function App() {
     <div className="app-shell">
       <FloatingNumbers />
 
-      {/* Audio Toggle in Top-Left Corner on EVERY screen */}
-      <button
-        className="audio-toggle-top-left"
-        onClick={() => dispatch({ type: 'TOGGLE_AUDIO' })}
-        aria-label={state.audioEnabled ? 'Mute audio' : 'Unmute audio'}
-        title={state.audioEnabled ? 'Mute audio' : 'Unmute audio'}
-      >
-        {state.audioEnabled ? '🔊' : '🔇'}
-      </button>
-
       {state.phase !== 'intro' && (
         <header className="app-header">
           <button className="home-btn" onClick={goHome} aria-label="Home">
@@ -245,7 +235,7 @@ export default function App() {
         </header>
       )}
 
-      <main className="phase-content">
+      <main className={`phase-content ${state.phase === 'intro' ? 'intro-phase' : ''}`}>
         {state.phase === 'intro'    && <IntroScreen   state={state} dispatch={dispatch} onBeginJourney={handleBeginJourney} />}
         {state.phase === 'wonder'   && <WonderPhase   state={state} dispatch={dispatch} />}
         {state.phase === 'story'    && <StoryPhase    state={state} dispatch={dispatch} />}

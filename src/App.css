@@ -29,6 +29,14 @@
   box-sizing: border-box;
 }
 
+.phase-content.intro-phase {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
 /* ─── Header & Navigation ────────────────────────────────────────────────── */
 .app-header {
   position: fixed;
@@ -46,45 +54,10 @@
   box-sizing: border-box;
 }
 
-/* Audio Toggle in Top-Left Corner (Every Screen) */
-.audio-toggle-top-left {
-  position: fixed;
-  top: 8px;
-  left: 16px;
-  z-index: 220;
-  pointer-events: auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(22, 18, 48, 0.9);
-  border: 1.5px solid #f59e0b;
-  color: #fbbf24;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition: var(--transition-fast);
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-}
-
-.audio-toggle-top-left:hover {
-  background: rgba(245, 158, 11, 0.25);
-  border-color: #fcd34d;
-  transform: scale(1.06);
-}
-
-.audio-toggle-top-left:active {
-  transform: scale(0.96);
-}
-
-/* Home button placed next to top-left audio toggle in non-intro phases */
 .home-btn {
   position: absolute;
   top: 8px;
-  left: 66px;
+  left: 16px;
   z-index: 200;
   pointer-events: auto;
   background: rgba(22, 18, 48, 0.9);
@@ -98,7 +71,7 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: var(--transition-fast);
-  min-height: 40px;
+  min-height: 36px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -138,19 +111,12 @@
     height: 50px;
     padding: 0 8px;
   }
-  .audio-toggle-top-left {
-    top: 7px;
-    left: 8px;
-    width: 36px;
-    height: 36px;
-    font-size: 1.05rem;
-  }
   .home-btn {
     top: 7px;
-    left: 50px;
+    left: 8px;
     padding: 4px 10px;
     font-size: 0.84rem;
-    min-height: 36px;
+    min-height: 32px;
   }
   .header-progress {
     top: 7px;
@@ -166,19 +132,12 @@
   .app-header {
     height: 46px;
   }
-  .audio-toggle-top-left {
-    top: 6px;
-    left: 6px;
-    width: 32px;
-    height: 32px;
-    font-size: 0.95rem;
-  }
   .home-btn {
     top: 6px;
-    left: 42px;
+    left: 6px;
     padding: 4px 8px;
     gap: 0;
-    min-height: 32px;
+    min-height: 30px;
   }
   .home-btn .home-text {
     display: none;
